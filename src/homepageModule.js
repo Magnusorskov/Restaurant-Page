@@ -1,14 +1,35 @@
 export {createHomepage}
+import myVideo from "./videos/8190079-hd_1366_720_30fps.mp4";
 
 const createHomepage = () => {
-    const homeDiv = document.querySelector("#content");
+    const content = document.querySelector("#content");
+    content.classList.add('home-active'); // Add our special class
+    document.querySelector("#homepage-button").classList.add("selected-button");
+
+
+    const videoElement = document.createElement("video");
+    videoElement.autoplay = true;
+    videoElement.loop = true;
+    videoElement.muted = true;
+    videoElement.playsInline = true;
+
+   const sourceElement = document.createElement("source");
+   sourceElement.id = "video-source";
+   sourceElement.src = myVideo;
+   sourceElement.type = "video/mp4";
+   videoElement.appendChild(sourceElement);
+   content.appendChild(videoElement);
+
+
+
 
     const headline = document.createElement("h1");
     headline.textContent = "We Bake";
-    homeDiv.appendChild(headline);
+    content.appendChild(headline);
 
     const descriptiveTextContainer = document.createElement("div");
     descriptiveTextContainer.classList.add("home");
+
 
     const headlineTwo = document.createElement("h2");
     headlineTwo.textContent = "A Taste of Passion and Purity in Every Bite";
@@ -32,5 +53,5 @@ const createHomepage = () => {
         "            creation at a time.";
     descriptiveTextContainer.appendChild(pThree);
 
-    homeDiv.appendChild(descriptiveTextContainer);
+    content.appendChild(descriptiveTextContainer);
 }
