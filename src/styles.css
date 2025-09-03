@@ -20,7 +20,7 @@
 
 #content > h1 {
     font-size: 7rem;
-    margin-top: 6rem;
+
     margin-bottom: 2rem;
     color: hsl(31 42 48);
     text-shadow: 0 4px 6px rgba(0, 0, 0, 1);
@@ -144,6 +144,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 8vh;
 }
 
 #content.home-active video {
@@ -159,8 +160,16 @@ body {
     z-index: -1;
 }
 
-#content.menu-active {
-
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    color: white;
+    gap: 3rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    width: 45vw;
 }
 
 .menu-container {
@@ -171,6 +180,7 @@ body {
     gap: 3rem;
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
 }
 
 .menu-item-container {
@@ -182,9 +192,12 @@ body {
 .item-text-container {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+
+    gap: 8rem;
 
 }
+
 
 #img-item-one, #img-item-two, #img-item-three {
     width: 50%;
